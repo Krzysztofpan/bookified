@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="lampGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#eedcc3" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="globeShade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a574"/>
+      <stop offset="100%" stop-color="#8b6914"/>
+    </linearGradient>
+  </defs>
+  <!-- soft vignette -->
+  <ellipse cx="210" cy="200" rx="180" ry="100" fill="url(#lampGlow)"/>
+  <!-- desk surface -->
+  <path d="M20 260h380v8H20v-8z" fill="#b8956a" opacity="0.35"/>
+  <!-- globe -->
+  <g transform="translate(48 52)">
+    <ellipse cx="72" cy="118" rx="56" ry="14" fill="#5c4a32" opacity="0.25"/>
+    <circle cx="72" cy="72" r="58" fill="url(#globeShade)"/>
+    <ellipse cx="72" cy="72" rx="58" ry="58" fill="none" stroke="#4a3a28" stroke-width="1.2" opacity="0.5"/>
+    <path d="M14 72h116M72 14v116" stroke="#3d3020" stroke-width="0.8" opacity="0.35"/>
+    <path d="M20 72c0-28 24-50 52-50s52 22 52 50" stroke="#3d3020" stroke-width="0.7" opacity="0.3" fill="none"/>
+    <rect x="64" y="130" width="16" height="42" rx="2" fill="#6b5340"/>
+    <rect x="52" y="168" width="40" height="8" rx="2" fill="#5c4635"/>
+  </g>
+  <!-- book stack -->
+  <g transform="translate(175 118)">
+    <rect x="0" y="68" width="120" height="22" rx="2" fill="#6b4423" stroke="#4a2f18" stroke-width="0.5"/>
+    <rect x="4" y="46" width="112" height="22" rx="2" fill="#8b5a3c" stroke="#5c3a24" stroke-width="0.5"/>
+    <rect x="8" y="24" width="104" height="22" rx="2" fill="#5c3d2e" stroke="#3d2818" stroke-width="0.5"/>
+    <rect x="12" y="0" width="96" height="24" rx="2" fill="#a07050" stroke="#6b4832" stroke-width="0.5"/>
+    <line x1="18" y1="8" x2="102" y2="8" stroke="#4a3020" stroke-width="0.6" opacity="0.4"/>
+  </g>
+  <!-- open book -->
+  <g transform="translate(200 210)">
+    <path d="M0 8c0-4 4-8 10-8h38c6 0 10 4 10 8v32H0V8z" fill="#f5ebe0" stroke="#8b7355" stroke-width="0.8"/>
+    <path d="M58 8c0-4 4-8 10-8h38c6 0 10 4 10 8v32H58V8z" fill="#ede4d6" stroke="#8b7355" stroke-width="0.8"/>
+    <line x1="58" y1="8" x2="58" y2="40" stroke="#a89078" stroke-width="0.6"/>
+    <line x1="12" y1="18" x2="46" y2="18" stroke="#c4b4a0" stroke-width="0.5"/>
+    <line x1="70" y1="18" x2="104" y2="18" stroke="#c4b4a0" stroke-width="0.5"/>
+  </g>
+  <!-- desk lamp -->
+  <g transform="translate(300 40)">
+    <path d="M48 218h-8l-4-160h16l-4 160z" fill="#b8860b" opacity="0.9"/>
+    <ellipse cx="44" cy="222" rx="28" ry="6" fill="#5c4635" opacity="0.4"/>
+    <path d="M44 58 L8 200h72L44 58z" fill="#f4e8c8" stroke="#8b7355" stroke-width="1"/>
+    <path d="M44 58 L20 120h48L44 58z" fill="#fff9ef" opacity="0.85"/>
+    <circle cx="44" cy="52" r="6" fill="#c9a227"/>
+  </g>
+</svg>
