@@ -6,15 +6,15 @@ export const UploadSchema = z.object({
     .custom<File | undefined>((v) => v === undefined || v instanceof File)
     .superRefine((val, ctx) => {
       if (val === undefined || !(val instanceof File)) {
-        ctx.addIssue("Please upload a PDF file")
+        ctx.addIssue({ code: "custom", message: "Please upload a PDF file" })
         return
       }
       if (val.type !== "application/pdf" && !val.name.toLowerCase().endsWith(".pdf")) {
-        ctx.addIssue("Please upload a valid PDF file")
+        ctx.addIssue({ code: "custom", message: "Please upload a valid PDF file" })
         return
       }
       if (val.size > MAX_FILE_SIZE) {
-        ctx.addIssue("PDF file (max 50MB)")
+        ctx.addIssue({ code: "custom", message: "PDF file (max 50MB)" })
       }
     }),
   coverImage: z.custom<File | undefined>((v) => v === undefined || v instanceof File).optional(),
