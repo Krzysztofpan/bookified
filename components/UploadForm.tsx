@@ -14,36 +14,13 @@ import { useAuth } from "@clerk/nextjs"
 import { checkBookExists, createBook, saveBookSegments } from "@/lib/actions/book.actions"
 import { useRouter } from "next/navigation"
 import { upload } from "@vercel/blob/client"
+import { voiceIds } from "@/lib/constants"
+import { UploadSchema } from "@/lib/schemas"
 
-const MAX_PDF_BYTES = 50 * 1024 * 1024
-
-const voiceIds = ["dave", "daniel", "chris", "rachel", "sarah"] as const
 type VoiceId = (typeof voiceIds)[number]
 
-const formSchema = z.object({
-  pdfFile: z
-    .custom<File | undefined>((v) => v === undefined || v instanceof File)
-    .superRefine((val, ctx) => {
-      if (val === undefined || !(val instanceof File)) {
-        ctx.addIssue("Please upload a PDF file")
-        return
-      }
-      if (val.type !== "application/pdf" && !val.name.toLowerCase().endsWith(".pdf")) {
-        ctx.addIssue("Please upload a valid PDF file")
-        return
-      }
-      if (val.size > MAX_PDF_BYTES) {
-        ctx.addIssue("PDF file (max 50MB)")
-      }
-    }),
-  coverImage: z.custom<File | undefined>((v) => v === undefined || v instanceof File).optional(),
-  title: z.string().trim().min(1, "Title is required"),
-  author: z.string().trim().min(1, "Author name is required"),
-  voice: z.enum(voiceIds),
-})
-
-type FormInput = z.input<typeof formSchema>
-type FormOutput = z.output<typeof formSchema>
+type FormInput = z.input<typeof UploadSchema>
+type FormOutput = z.output<typeof UploadSchema>
 
 const VOICES: {
   male: { id: VoiceId; name: string; description: string }[]
@@ -88,7 +65,7 @@ function UploadForm() {
   const router = useRouter()
   const { userId } = useAuth()
   const form = useForm<FormInput, unknown, FormOutput>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(UploadSchema),
     mode: "onSubmit",
     reValidateMode: "onChange",
     defaultValues: {

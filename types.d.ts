@@ -1,16 +1,15 @@
 import type { Document, Types } from "mongoose"
-import { Document, Types } from "mongoose"
 import { ReactNode } from "react"
 import { Control, FieldPath, FieldValues } from "react-hook-form"
 import { LucideIcon } from "lucide-react"
 import z from "zod"
-import { UploadSchema } from "@/lib/zod"
+import { UploadSchema } from ""
+
 export interface Book {
   title: string
   author: string
   slug: string
   coverURL: string
-  coverColor: string
 }
 
 // ============================================

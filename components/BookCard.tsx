@@ -2,7 +2,7 @@ import { Book } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
 
-function BookCard({ book: { title, author, slug, coverURL, coverColor } }: { book: Book }) {
+function BookCard({ book: { title, author, slug, coverURL } }: { book: Book }) {
   return (
     <Link href={`/books/${slug}`}>
       <article className='book-card'>

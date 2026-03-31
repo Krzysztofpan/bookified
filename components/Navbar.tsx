@@ -19,8 +19,8 @@ function Navbar() {
       <div className='wrapper navbar-height flex items-center justify-between gap-4 py-4'>
         <div className='flex min-w-0 flex-1 items-center justify-start gap-8 md:gap-10'>
           <Link href='/' className='flex shrink-0 items-center gap-0.5'>
-            <Image src='/assets/logo.png' alt='Bookfied' width={42} height={26} />
-            <span className='logo-text'>Bookiefied</span>
+            <Image src='/assets/logo.png' alt='Bookified' width={42} height={26} />
+            <span className='logo-text'>Bookified</span>
           </Link>
 
           <nav className='flex  justify-end w-full items-center gap-7.5'>
